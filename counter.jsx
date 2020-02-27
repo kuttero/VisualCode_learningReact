@@ -18,11 +18,27 @@ class Counter extends Component {
     );
   }
 
+  // Otherway to handle 'this'
+  /*   constructor() {
+    super();
+    this.handleIncrement = this.handleIncrement.bind(this);
+  } */
+
+  // Second way to handle 'this' without constructor method
+  handleIncrement = () => {
+    console.log("Increment Clicked");
+  };
+
   render() {
     return (
       <React.Fragment>
         <span className={this.classesMethod()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm">Press me!</button>
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          Press me!
+        </button>
         {this.renderTags()}
       </React.Fragment>
     );
