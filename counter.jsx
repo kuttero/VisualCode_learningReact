@@ -25,7 +25,9 @@ class Counter extends Component {
   } */
 
   // Second way to handle 'this' without constructor method
-  handleIncrement = () => {
+  handleIncrement = product => {
+    console.log(product);
+
     this.setState({ count: this.state.count + 1 });
   };
 
@@ -34,7 +36,7 @@ class Counter extends Component {
       <React.Fragment>
         <span className={this.classesMethod()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement}
+          onClick={product => this.handleIncrement(product)}
           className="btn btn-secondary btn-sm"
         >
           Press me!
